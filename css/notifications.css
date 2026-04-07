@@ -1,0 +1,136 @@
+@import 'variables.css';
+
+/* ===== NOTIFICATION CARD ===== */
+.notif-card {
+    background: var(--card-bg);
+    border: var(--card-border);
+    border-radius: var(--radius-lg);
+    padding: 20px 24px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    transition: var(--transition);
+    cursor: pointer;
+    position: relative;
+}
+
+.notif-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.notif-card.unread {
+    border-left: 3px solid var(--primary);
+    background: var(--primary-light);
+}
+
+/* ===== NOTIF ICON ===== */
+.notif-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.notif-icon.income {
+    background: rgba(0, 200, 150, 0.15);
+    color: var(--income-color);
+}
+
+.notif-icon.expense {
+    background: rgba(255, 91, 91, 0.15);
+    color: var(--expense-color);
+}
+
+.notif-icon i {
+    width: 20px;
+    height: 20px;
+}
+
+/* ===== NOTIF CONTENT ===== */
+.notif-content {
+    flex: 1;
+}
+
+.notif-title {
+    font-size: var(--font-sm);
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 6px;
+}
+
+.notif-message {
+    font-size: var(--font-sm);
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 8px;
+}
+
+.notif-meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.notif-time {
+    font-size: var(--font-xs);
+    color: var(--text-muted);
+}
+
+.notif-amount {
+    font-size: var(--font-xs);
+    font-weight: 600;
+    color: var(--primary);
+    background: var(--primary-light);
+    padding: 2px 10px;
+    border-radius: var(--radius-full);
+}
+
+/* ===== NOTIF ACTIONS ===== */
+.notif-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+.notif-unread-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--primary);
+    border-radius: 50%;
+}
+
+.notif-delete-btn {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    padding: 4px;
+    border-radius: var(--radius-sm);
+    transition: var(--transition-fast);
+    display: flex;
+    align-items: center;
+}
+
+.notif-delete-btn:hover {
+    background: rgba(255, 91, 91, 0.15);
+    color: var(--expense-color);
+}
+
+.notif-delete-btn i {
+    width: 16px;
+    height: 16px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .notif-card {
+        padding: 16px;
+    }
+}
